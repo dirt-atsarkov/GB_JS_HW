@@ -1,0 +1,44 @@
+<!-- Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch). -->
+
+<script type="text/javascript">
+	var a = Math.round(Math.random()*15);
+	var b = Math.round(Math.random()*15);
+	var operation = prompt("введите операцию (+ - / *");
+	alert(a);alert(b);
+
+		function summ(a, b) {
+    		return a + b;
+		}
+
+		function subtr(a, b) {
+    		return a - b;
+		}
+
+		function div(a, b) {
+    		return a / b;
+		}
+
+		function mult(a, b) {
+    		return a * b;
+		}
+
+		function mathOperation(a, b, operation){
+			switch(operation) {
+				case "+":
+					alert('a + b = '  + summ(a, b));
+					break;
+				case "-":
+					alert('a - b = '  + subtr(a, b));
+					break;
+				case "/":
+					alert('a / b = '  + div(a, b));
+					break;
+				case "*":
+					alert('a * b = '  + mult(a, b));
+					break;
+				default:
+					alert("Ошибка: введена неверная операция !");
+			}		
+		}
+	mathOperation(a, b, operation);
+</script>
