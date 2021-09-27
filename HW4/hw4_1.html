@@ -1,0 +1,25 @@
+<script>
+
+    var number = parseInt(prompt('Введите число от 0 до 999'));
+
+    function numtostring(number) {
+        var numobj = {
+            units: 0,
+            tens: 0,
+            hundreds: 0,
+        };
+        if (number <= 9) {
+            numobj.units = number;
+        } else if (number <= 999) {
+            numobj.units = Math.floor(number % 10);
+            numobj.tens = Math.floor(number / 10 % 10);
+            numobj.hundreds = Math.floor(number / 100 % 10);
+        } else {
+            number = 0;
+            console.log('Вы ввели число за диапазоном 0 - 999');
+        }
+        console.log(numobj);
+    }
+    numtostring(number)
+
+</script>
