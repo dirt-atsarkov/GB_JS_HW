@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+  
+  </title>
+</head>
+<body>
+</body>
+
+<script type="text/javascript">
+  
+  var table = document.createElement('table');
+var str,sek;
+var figur = ["","&#9820;","&#9822;","&#9821;","&#9819;","&#9818;","&#9821;","&#9822;","&#9820;",""];
+var bykv = ["","A","B","C","D","E","F","G","H",""];
+var flcolor = 0;
+
+document.body.appendChild(table);
+
+table.style = "width:600px;font-size:45px;";
+
+for (var i = 0;i < 10; i++)
+    {
+        str = document.createElement('tr');
+        str.className = "name";
+        table.appendChild(str);
+        for (var j = 0;j < 10; j++)
+            {
+                flcolor++;
+                
+                sek = document.createElement('th');
+                sek.style.width = "50px";
+                sek.style.height = "50px";
+                if (i == 1)
+                    {sek.innerHTML = "<span>" + figur[j] + "</span>";}
+                if ((i == 2) || (i == 7))
+                    {sek.innerHTML = "<span>&#9823;</span>";}
+                
+                if (i == 8)
+                    {sek.innerHTML="<span>"+figur[j]+"</span>";}
+                if ((i == 0) || (i == 9))
+                  {sek.innerHTML = "<span>" + bykv[j] + "</span>";
+                  sek.style.fontSize = "25px";
+                  sek.style.transform="rotate(180deg)";
+                  if ((i == 0))
+                     sek.style.transform = "rotate(0deg)";
+                
+                }
+                
+                if(j == 9)
+                     sek.style.transform="rotate(90deg)";
+                if(j == 0)
+                     sek.style.transform="rotate(270deg)";                
+
+                if (((j == 0) || (j == 9)) && ((i > 0) && (i < 9)))
+                 {sek.innerHTML = "<span>" + i + "</span>";
+                  sek.style.fontSize = "25px";
+                  
+                 }
+               
+                
+                if ((j > 0) && (j < 9) && (i > 0) && (i < 9))
+                    {
+                    if (flcolor % 2 == 0)  
+                    {sek.style.background = "#D2B48C";}
+                     else {sek.style.background = "#8B4513";}
+                        
+                    if (i < 4) sek.style.color = "white";
+                        else sek.style.color = "black";
+                        
+                    }
+                
+                str.appendChild(sek);
+                
+            }
+         flcolor++;
+        
+    }
+  
+</script>
+
+</html>
